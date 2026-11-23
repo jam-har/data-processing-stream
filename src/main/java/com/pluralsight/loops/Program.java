@@ -1,3 +1,4 @@
+/*
 package com.pluralsight.loops;
 
 import com.pluralsight.Person;
@@ -6,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+*/
 /**
  * Program (Workbook 6a, Section 4-1 Collections vs Streams, Exercise 1)
  *
@@ -15,7 +17,8 @@ import java.util.Scanner;
  * Everything here is done with traditional for loops. Each one follows
  * the same pattern: prepare a result before the loop, visit every person,
  * update the result inside the loop, use the result after the loop.
- */
+ *//*
+
 public class Program {
     public static void main(String[] args) {
         List<Person> people = createPeopleList();
@@ -73,13 +76,15 @@ public class Program {
 
     // A first version that returns the average as a whole number: the
     // division is done with decimals, then rounded to the nearest int
+*/
 /*    private static int calculateAverageAge(List<Person> people) {
         int totalAge = 0;
         for (Person person : people) {
             totalAge += person.getAge();
         }
         return (int) Math.round((double) totalAge / people.size());
-    }*/
+    }*//*
+
 
     // Average = the sum of all ages divided by the number of people.
     // totalAge is a double on purpose: dividing an int by an int would
@@ -115,4 +120,4 @@ public class Program {
         }
         return minAge;
     }
-}
+}*/

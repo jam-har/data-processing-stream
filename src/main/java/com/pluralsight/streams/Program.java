@@ -14,22 +14,16 @@ public class Program {
         Scanner scanner = new Scanner(System.in);
         String searchName = scanner.nextLine();
 
-        // The result list starts empty. The loop looks at every person and
-        // copies the ones that match into it
-        List<Person> matchingPeople = new ArrayList<>();
-        for (Person person : people) {
-            // A match on the first name OR on the last name counts.
-            // equalsIgnoreCase: smith finds Smith
-            if (person.getFirstName().equalsIgnoreCase(searchName) ||
-                    person.getLastName().equalsIgnoreCase(searchName)) {
-                matchingPeople.add(person);
-            }
-        }
+        List<Person> matchingPeople =
+                people
+                        .stream().filter(person -> person.getFirstName().equalsIgnoreCase(searchName) || person.getLastName().equalsIgnoreCase(searchName))
+                        .toList();
 
         System.out.println("People with matching name:");
-        for (Person person : matchingPeople) {
-            System.out.println(person.getFirstName() + " " + person.getLastName());
-        }
+        matchingPeople.forEach(System.out::println);
+
+
+
 
         //int averageAge = calculateAverageAge(people);
         double averageAge = calculateAverageAge(people);
@@ -106,4 +100,4 @@ public class Program {
         return minAge;
     }
 }
-}
+
